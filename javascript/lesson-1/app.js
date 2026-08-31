@@ -5,24 +5,35 @@ let quantidade=4;
 let precoUnitario=1000;
 
 //3- Calcular o subtotal (quantidade * preço) e o total com 17%(0.17) de IVA, guardando cada um na sua variável.
-const iva=0.17;
+const IVA=0.17;
 let subtotal = quantidade*precoUnitario;
-let total = subtotal+(subtotal*iva);
+let total = subtotal*IVA;
 
 //4- Mostrar o recibo na consola com um template literal de várias linhas, incluindo o nome e os valores em MT.
-console.log(`Recibo:
+console.log(`
+    RECIBO:
     Cliente: ${nomeCliente},
     Produto: ${nomeProduto},
     Quantidade: ${quantidade},
-    Preço unitario: ${precoUnitario} Mt,
+    Preço Unitário: ${precoUnitario} Mt,
     Subtotal: ${subtotal} Mt,
-    Total (com IVA): ${total} Mt`);
+    Total (com IVA): ${total} Mt
+    `);
 
 
 //5- Alterar a quantidade a meio do ficheiro e confirmar na consola que o total acompanha — e comentar o porquê.
 quantidade= 7;
-total = subtotal+(subtotal*iva);
-console.log(`Total (com IVA): ${total} Mt`);
+subtotal = quantidade*precoUnitario;
+total = subtotal*IVA;
+console.log(`
+    RECIBO ACTUALIZADO:
+    Cliente: ${nomeCliente},
+    Produto: ${nomeProduto},
+    Quantidade: ${quantidade},
+    Preço Unitário: ${precoUnitario} Mt,
+    Subtotal: ${subtotal} Mt,
+    Total (com IVA): ${total} Mt
+    `);
 
 /*O total acompanha pois a variavel total é recalculada com base no novo subtotal, 
 que por sua vez é recalculado com a nova quantidade e o preço unitário. */
